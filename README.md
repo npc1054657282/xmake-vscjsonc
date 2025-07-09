@@ -1,0 +1,2 @@
+# xmake-vscjsonc
+可以修改vscode的settings.json风格的jsonc的，不破坏注释的配置设置xmake模块
