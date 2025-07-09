@@ -53,3 +53,15 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+# MacOS Cache
+.DS_Store
+
+# Xmake cache
+.xmake/
+build/
+makefile
+.vscode/compile_commands.json
+
+# local run configuration
+runconf.lua
