@@ -24,17 +24,29 @@ local editor = import("module.vscjsonc")("path/to/jsonc/file")
 ### set
 
 - 参数 `path` (`string` | `table`)
+  
   描述jsonc文档中一个键的路径。如果为`string`，表示根级别下的单个键。由于vscode的配置往往采用扁平化管理，因此该配置在实践中往往已经足够。如果为`table`，表示一个嵌套的键路径，表中的每个元素对应路径的一层。
+  
 - 参数 `value` (`string` | `number` | `boolean` | `nil` | `table`)
+  
   要设置到指定路径的新值。可以是任何标准的JSON数据类型：字符串、数字、布尔值或`nil`（会被转换成`null`）。
+  
   **注意：**如果`value`是一个`table`（用于表示JSON对象或数组），它必须被`vscjsonc.object()`或`vscjsonc.array()`函数包装 。这样做是为了明确区分是创建一个对象还是一个数组，因为在Lua中它们都用`table`表示。直接传入一个未包装的普通`table`会导致错误。
+  
 - 参数 `options` (`table`, 可选)
+  
   一个包含额外配置选项的表 。
+  
   - `options.comment` (`string`, 可选)
+    
     为新设置的值前方添加一行注释。
+    
     示例: `options = { comment = "这是一行注释" }`
+
   - `options.preserve_comments` (`boolean`, 可选)
+    
     当更新一个已存在的值时，决定是否保留其原有的注释。默认为`true`。若设置为`false`，在更新值时，会丢弃该节点上原有的所有注释。
+
 - 返回值 编辑器实例本身，以便进行链式调用
 
 ### save
