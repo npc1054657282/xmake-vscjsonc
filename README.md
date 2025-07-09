@@ -31,7 +31,7 @@ local editor = import("module.vscjsonc")("path/to/jsonc/file")
   
   要设置到指定路径的新值。可以是任何标准的JSON数据类型：字符串、数字、布尔值或`nil`（会被转换成`null`）。
   
-  **注意：**如果`value`是一个`table`（用于表示JSON对象或数组），它必须被`vscjsonc.object()`或`vscjsonc.array()`函数包装 。这样做是为了明确区分是创建一个对象还是一个数组，因为在Lua中它们都用`table`表示。直接传入一个未包装的普通`table`会导致错误。
+  **注意：** 如果`value`是一个`table`（用于表示JSON对象或数组），它必须被`vscjsonc.object()`或`vscjsonc.array()`函数包装 。这样做是为了明确区分是创建一个对象还是一个数组，因为在Lua中它们都用`table`表示。直接传入一个未包装的普通`table`会导致错误。
   
 - 参数 `options` (`table`, 可选)
   
